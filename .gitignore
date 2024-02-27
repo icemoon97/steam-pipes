@@ -1,1 +1,6 @@
 env/*
+
+captures/*
+
+# hide environment variables
+.env

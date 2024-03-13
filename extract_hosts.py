@@ -28,7 +28,12 @@ def extract_hostnames(pcap_path):
 pcaps = [
     'tokyo_cache_block_test1.pcap',
     'tokyo_cache_block_test2.pcap',
+    'tokyo_cache_block_test3.pcap',
     'tokyo_ext_block_test1.pcap',
+    'tokyo_ext_block_test2.pcap',
+    'tokyo_ext_block_test3.pcap',
+    'tokyo_ext_block_test4.pcap',
+    'tokyo_ext_block_test5.pcap',
     'tokyo2_test1.pcap',
     'tokyo2_test2.pcap',
 ]

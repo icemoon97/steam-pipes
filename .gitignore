@@ -1,5 +1,6 @@
 env/*
 
+# raw .pcap files
 captures/*
 
 # hide environment variables

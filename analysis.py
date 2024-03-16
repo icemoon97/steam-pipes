@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 import pyshark
 
+
 def extract_dns(pcap_file):
     cap = pyshark.FileCapture(pcap_file, display_filter='dns')
 
@@ -51,10 +52,9 @@ def count(pcap_file):
     return stats
 
 
-
 from scapy.all import rdpcap, IP
 
-def count_with_scapy(pcap_file):
+def count_scapy(pcap_file):
     # Initialize a dictionary to hold counts and volumes for each IP address
     stats = defaultdict(lambda: {"count": 0, "volume": 0})
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         known[ip] = h
 
 
-    stats = count_with_scapy(str(pcap))
+    stats = count_scapy(str(pcap))
 
     for ip, stat in sorted(stats.items(), key=lambda x: x[1]['volume'], reverse=True):
         n, volume = stat["count"], stat["volume"]
@@ -102,9 +102,3 @@ if __name__ == "__main__":
         else:
             print(f"{ip}: {n:,} total, {volume:,} bytes")
     
-
-
-# TODO:
-# from all tokyo captures, make master mapping of IP to hostname
-# make graphs of how much data recieved from each cache/ext
-# should also probably look at data uploaded from user
